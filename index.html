@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>11 Months — Our Story</title>
+
+  <!-- Load Google Fonts NON-BLOCKING so script.js runs immediately -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" />
+  </noscript>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CURSOR GLOW -->
+  <div id="cursor-glow"></div>
+
+  <!-- ═══ LOADING SCREEN ═══ -->
+  <div id="loading-screen">
+    <canvas id="loading-stars"></canvas>
+    <div class="loading-content">
+      <div class="loading-heart">♡</div>
+      <p class="loading-text" id="loading-text">Loading our story…</p>
+      <div class="loading-bar-wrap">
+        <div class="loading-bar" id="loading-bar"></div>
+      </div>
+      <p class="loading-sub">11 months of us</p>
+    </div>
+  </div>
+
+  <!-- MUSIC TOGGLE -->
+  <button id="music-toggle" title="Toggle music" aria-label="Toggle background music">
+    <span id="music-icon">♪</span>
+  </button>
+
+  <!-- ═══ MAIN CONTENT ═══ -->
+  <main id="main-content" class="hidden">
+
+    <!-- ── HERO ── -->
+    <section id="hero" class="section">
+      <canvas id="star-canvas"></canvas>
+      <div class="particles-wrap" id="particles-wrap"></div>
+
+      <div class="hero-content animate-in">
+        <span class="hero-label">est. a year ago</span>
+        <h1 class="hero-title">11 Months</h1>
+        <p class="hero-sub">And I Still Choose You</p>
+        <div class="hero-divider"></div>
+        <p class="hero-quote">"kuch rishte gin ke nahi jiyen jaate — sirf jiye jaate hain."</p>
+        <button class="btn-primary scroll-btn" onclick="scrollToChapters()">Begin Our Story ↓</button>
+      </div>
+
+      <div class="floating-hearts" id="floating-hearts"></div>
+    </section>
+
+    <!-- ── CHAPTERS ── -->
+    <section id="chapters" class="section chapters-section">
+      <div class="section-inner">
+
+        <div class="chapter-header reveal">
+          <span class="tag">Our Novel</span>
+          <h2>The Story So Far</h2>
+        </div>
+
+        <article class="chapter-card reveal" data-chapter="1">
+          <div class="chapter-number">Chapter I</div>
+          <h3 class="chapter-title">The Hello</h3>
+          <div class="chapter-line"></div>
+          <div class="chapter-text typing-text"
+            data-text="It started with something small — a message, a reply, maybe a laugh. Nothing about that first hello hinted at what it would grow into. But looking back, it was the quietest beginning of the loudest chapter of my life. You were just a stranger then. Now you are the first thought my mornings reach for."></div>
+          <div class="chapter-accent">♡</div>
+        </article>
+
+        <article class="chapter-card reveal" data-chapter="2">
+          <div class="chapter-number">Chapter II</div>
+          <h3 class="chapter-title">Becoming Close</h3>
+          <div class="chapter-line"></div>
+          <div class="chapter-text typing-text"
+            data-text="Then came the late nights. The texts that should have ended hours ago but didn't. The way I started waiting for your name to appear on my screen. We weren't falling — we were leaning, slowly, like two trees growing toward the same light. And before either of us could name it, we were close."></div>
+          <div class="chapter-accent">♡</div>
+        </article>
+
+        <article class="chapter-card reveal" data-chapter="3">
+          <div class="chapter-number">Chapter III</div>
+          <h3 class="chapter-title">The Attachment</h3>
+          <div class="chapter-line"></div>
+          <div class="chapter-text typing-text"
+            data-text="Attachment is a strange word for something this soft. It's not chains. It's the particular way your laugh sounds at 2am. The way your silences have shapes I've learned to read. I wasn't trying to get attached. I just kept noticing you — and then I couldn't stop."></div>
+          <div class="chapter-accent">♡</div>
+        </article>
+
+        <article class="chapter-card reveal" data-chapter="4">
+          <div class="chapter-number">Chapter IV</div>
+          <h3 class="chapter-title">The Fights</h3>
+          <div class="chapter-line"></div>
+          <div class="chapter-text typing-text"
+            data-text="We weren't perfect. There were nights of silence that felt like walls, words said that we both wish we could take back. I learned things about myself in our hardest moments that I didn't want to know — that I could be stubborn, careless, too slow to say sorry. But I also learned: you were always worth coming back to."></div>
+          <div class="chapter-accent">♡</div>
+        </article>
+
+        <article class="chapter-card reveal" data-chapter="5">
+          <div class="chapter-number">Chapter V</div>
+          <h3 class="chapter-title">Still You</h3>
+          <div class="chapter-line"></div>
+          <div class="chapter-text typing-text"
+            data-text="After everything — the hellos, the closeness, the attachment, the fights — I look around and it's still you. Not because there's no one else. Not because it's easy. But because somewhere in these 11 months you became the person my soul recognises as home. And choosing you, again and again, is the easiest hard thing I have ever done."></div>
+          <div class="chapter-accent">♡</div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── MEMORY GALLERY ── -->
+    <section id="gallery" class="section gallery-section">
+      <div class="section-inner">
+        <div class="chapter-header reveal">
+          <span class="tag">Memories</span>
+          <h2>Moments We Keep</h2>
+          <p class="section-sub">hover to feel it again</p>
+        </div>
+
+        <div class="gallery-grid reveal">
+          <div class="gallery-card" data-memory="The first time you laughed at something I said — I played it back in my head for days.">
+            <div class="gallery-icon">☽</div>
+            <p class="gallery-label">First Laugh</p>
+            <div class="gallery-overlay"><p></p></div>
+          </div>
+          <div class="gallery-card" data-memory="2am. Neither of us wanted to say goodnight. So we didn't.">
+            <div class="gallery-icon">✦</div>
+            <p class="gallery-label">2am Conversations</p>
+            <div class="gallery-overlay"><p></p></div>
+          </div>
+          <div class="gallery-card" data-memory="The fight we thought was the end. It wasn't. We were just being tested.">
+            <div class="gallery-icon">♡</div>
+            <p class="gallery-label">The Hard Night</p>
+            <div class="gallery-overlay"><p></p></div>
+          </div>
+          <div class="gallery-card" data-memory="You sent something small — a song, a line, a photo — and it meant everything.">
+            <div class="gallery-icon">◈</div>
+            <p class="gallery-label">Little Things</p>
+            <div class="gallery-overlay"><p></p></div>
+          </div>
+          <div class="gallery-card" data-memory="When I said sorry and you said it's okay. Some moments don't need big words.">
+            <div class="gallery-icon">❋</div>
+            <p class="gallery-label">Forgiveness</p>
+            <div class="gallery-overlay"><p></p></div>
+          </div>
+          <div class="gallery-card" data-memory="11 months of small moments adding up to something I never want to lose.">
+            <div class="gallery-icon">∞</div>
+            <p class="gallery-label">All Of It</p>
+            <div class="gallery-overlay"><p></p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MINI GAMES ── -->
+    <section id="games" class="section games-section">
+      <div class="section-inner">
+        <div class="chapter-header reveal">
+          <span class="tag">Play With Us</span>
+          <h2>Little Worlds</h2>
+        </div>
+
+        <div class="game-tabs reveal">
+          <button class="game-tab active" data-game="catch">Catch Hearts</button>
+          <button class="game-tab" data-game="future">Our Future</button>
+          <button class="game-tab" data-game="quiz">Know Me</button>
+          <button class="game-tab" data-game="openwhen">Open When</button>
+        </div>
+
+        <!-- Game 1: Catch Hearts -->
+        <div class="game-panel active" id="game-catch">
+          <div class="game-inner">
+            <h3>Catch 11 Hearts</h3>
+            <p class="game-desc">catch all 11 floating hearts before time runs out</p>
+            <div class="catch-stats">
+              <span>Caught: <strong id="hearts-caught">0</strong> / 11</span>
+              <span>Time: <strong id="catch-timer">30</strong>s</span>
+            </div>
+            <div id="catch-arena" class="catch-arena">
+              <p class="game-start-hint" id="catch-hint">tap to start</p>
+            </div>
+            <div id="catch-result" class="game-result hidden">
+              <p>11 months of loving you 🤍</p>
+              <button class="btn-sm" onclick="resetCatch()">play again</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game 2: Choose Future -->
+        <div class="game-panel" id="game-future">
+          <div class="game-inner">
+            <h3>Choose Our Future</h3>
+            <p class="game-desc">what do you want us to be?</p>
+            <div class="future-buttons">
+              <button class="future-btn" onclick="chooseFuture('strangers')">strangers</button>
+              <button class="future-btn" onclick="chooseFuture('temporary')">temporary</button>
+              <button class="future-btn glow-btn" onclick="chooseFuture('forever')">forever</button>
+            </div>
+            <div id="future-result" class="game-result hidden"></div>
+            <canvas id="star-burst"></canvas>
+          </div>
+        </div>
+
+        <!-- Game 3: Quiz -->
+        <div class="game-panel" id="game-quiz">
+          <div class="game-inner">
+            <h3>How Well You Know Me</h3>
+            <p class="game-desc">answer honestly 🤍</p>
+            <div id="quiz-container">
+              <div class="quiz-progress-bar"><div id="quiz-progress" style="width:0%"></div></div>
+              <div id="quiz-question-wrap">
+                <p id="quiz-question" class="quiz-question"></p>
+                <div id="quiz-options" class="quiz-options"></div>
+              </div>
+              <div id="quiz-result-wrap" class="hidden">
+                <div class="quiz-score-display">
+                  <span id="quiz-score-num"></span>
+                  <p id="quiz-score-msg"></p>
+                  <button class="btn-sm" onclick="resetQuiz()">try again</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Game 4: Open When -->
+        <div class="game-panel" id="game-openwhen">
+          <div class="game-inner">
+            <h3>Open When…</h3>
+            <p class="game-desc">pick the one that matches right now</p>
+            <div class="openwhen-buttons">
+              <button class="ow-btn" onclick="openWhen('sad')">when sad</button>
+              <button class="ow-btn" onclick="openWhen('overthinking')">when overthinking</button>
+              <button class="ow-btn" onclick="openWhen('missing')">when missing me</button>
+              <button class="ow-btn" onclick="openWhen('tired')">when tired</button>
+            </div>
+            <div id="openwhen-message" class="ow-message hidden"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SECRET LETTER ── -->
+    <section id="letter" class="section letter-section">
+      <div class="section-inner">
+        <div class="chapter-header reveal">
+          <span class="tag">For You Only</span>
+          <h2>A Letter I Kept</h2>
+        </div>
+
+        <div class="envelope-wrap reveal" id="envelope-wrap">
+          <div class="envelope" id="envelope" onclick="openEnvelope()">
+            <div class="envelope-flap"></div>
+            <div class="envelope-body">
+              <div class="envelope-seal">♡</div>
+              <p class="envelope-hint">tap to open</p>
+            </div>
+          </div>
+
+          <div class="letter-content hidden" id="letter-content">
+            <div class="letter-paper">
+              <p class="letter-date">written somewhere between then and now</p>
+              <div class="letter-body typing-text"
+                data-text="There are things I want you to know — things I write instead of say because I'm still learning how to say them right.
+
+I want you to know that I am learning. Every day I am learning what it means to love someone the way they deserve to be loved, not the way I think is enough. The difference matters, and I didn't always understand that. I do now.
+
+I want you to know that I stayed. Through every storm we built between us, through every silence that felt like distance — I stayed. Not because I had to. Because you were always worth the weather.
+
+I want you to know that choosing you is not something I do once. I choose you in small moments — when I'm tired and choose patience, when I'm hurt and choose to come back, when things are hard and I choose to stay soft for you.
+
+I want to make you feel safe. I know I haven't always done that. But I am building something in myself that is better — steadier — because that's what you deserve. Someone who makes you feel like you can breathe.
+
+You don't have to earn my love. You never did. You just have to be here — and so will I.
+
+Always,
+yours 🤍"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FINAL ENDING ── -->
+    <section id="ending" class="section ending-section">
+      <canvas id="night-sky"></canvas>
+      <div class="shooting-stars-wrap" id="shooting-stars-wrap"></div>
+
+      <div class="ending-content reveal">
+        <span class="tag">The End — For Now</span>
+        <div class="ending-text-wrap">
+          <div class="ending-text typing-text-slow" id="ending-paragraph"
+            data-text="aur agar kabhi ap is website ke end tak aa jao na to bas itna yaad rakhna ke isme sirf words ya animations nahi hain — isme mera waqt, meri niyat, aur wo har chhoti feeling hai jo shayad main har baar properly bol nahi pata…
+
+main perfect nahi hu aur shayad kabhi fictional men jaisa bhi na ban paun — lekin ek cheez sach hai: main har din thoda aur seekh raha hu, sirf isliye taki ap loved feel karo.
+
+aur agar itne sab highs, lows, fights, overthinking aur distance ke baad bhi hum yahan hain — na to shayad Allah ne humari kahani abhi khatam nahi likhi.
+
+isliye please kabhi ye mat sochna ke ap akeli ho — kyunki jab tak main hu, apki jagah mere dil me wahi rahegi jahan pehle din thi. 🤍"></div>
+        </div>
+
+        <div class="to-be-continued hidden" id="to-be-continued">
+          <div class="tbc-line"></div>
+          <p>to be continued…</p>
+          <div class="tbc-hearts">
+            <span>♡</span><span>♡</span><span>♡</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- EASTER EGG MODAL -->
+  <div id="easter-modal" class="easter-modal hidden">
+    <div class="easter-box">
+      <p class="easter-tag">✦ secret found ✦</p>
+      <p id="easter-text"></p>
+      <button onclick="closeEaster()">close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
